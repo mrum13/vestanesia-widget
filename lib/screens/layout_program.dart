@@ -2,7 +2,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vestanesia_widgets/screens/layout_program_selesai.dart';
 import 'package:vestanesia_widgets/screens/layout_program_semua.dart';
+import 'package:vestanesia_widgets/screens/layout_program_tersedia.dart';
 import 'package:vestanesia_widgets/widgets/widgets_auth.dart';
 
 class ProgramLayout extends StatelessWidget {
@@ -70,27 +72,20 @@ class ProgramLayout extends StatelessWidget {
             ),
             ///tabview
             Container( 
+              color: Color(0xFFE5E5E5),
               margin: EdgeInsets.all(16),
+              padding: EdgeInsets.only(bottom: 210),
               height: MediaQuery.of(context).size.height,
               child: TabBarView(
                 children: <Widget>[
                 Container(
-                  decoration: BoxDecoration(
-                    color: Colors.amber
-                  ),
                   child: ProgramSemua(),
                 ),
                 Container(
-                  decoration: BoxDecoration(
-                    color: Colors.blue
-                  ),
-                  child: Text('2'),
+                  child: ProgramTersedia(),
                 ),
                 Container(
-                  decoration: BoxDecoration(
-                    color: Colors.greenAccent
-                  ),
-                  child: Text('3'),
+                  child: ProgramSelesai(),
                 ),
               ]),
             ),
@@ -102,11 +97,14 @@ class ProgramLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        Column(
-          children: <Widget>[
-            _costumAppbar(),
-            _tapBarWithView(context)
-          ],
+        Container(
+          color: Color(0xFFE5E5E5),
+          child: Column(
+            children: <Widget>[
+              _costumAppbar(),
+              _tapBarWithView(context)
+            ],
+          ),
         )
       ],
     );

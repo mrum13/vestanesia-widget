@@ -6,7 +6,10 @@ class NotificationLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('Notifikasi'),
+      child: Center(
+        child: Text('Notifikasi Coming Soon',
+        style: TextStyle(fontWeight: FontWeight.w900),),
+      ),
     );
   }
 }

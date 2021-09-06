@@ -260,7 +260,24 @@ Widget wDividerGaris({required dynamic margin}) {
   );
 }
 
-Widget wCardVestanesia({required String imageAsset}) {
+Widget wCardVestanesia(
+    {required String imageAsset,
+    required String bagiHasil,
+    required String judulCard,
+    required String periode,
+    required String presentase,
+    required String investasi,
+    required String dana,
+    required String sisaHari,
+    required String sisaUnit,
+    required String diBuka,
+    required bool ketSatu,
+    required bool ketDua,
+    required bool ketTiga,
+    required dynamic colorButton,
+    required String textButton,
+    required double percentProgress,
+    required bool visibleProgress}) {
   return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       color: Colors.white,
@@ -281,7 +298,7 @@ Widget wCardVestanesia({required String imageAsset}) {
               Container(
                 padding: EdgeInsets.symmetric(vertical: 2, horizontal: 11),
                 child: Text(
-                  'Bagi Hasil 12 Bulan',
+                  'Bagi Hasil ' + bagiHasil + ' Bulan',
                   style: TextStyle(fontSize: 12, color: Colors.white),
                 ),
                 margin: EdgeInsets.only(left: 16),
@@ -294,11 +311,11 @@ Widget wCardVestanesia({required String imageAsset}) {
             ],
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(16, 12, 16, 16),
+            padding: EdgeInsets.fromLTRB(16, 12, 16, 0),
             child: Column(
               children: <Widget>[
                 Text(
-                  'Pengembangan Komoditi Pisang Cavendish (Musa acuminate/Cavendish)',
+                  judulCard,
                   style: TextStyle(fontWeight: FontWeight.w500),
                 ),
                 Container(
@@ -323,7 +340,7 @@ Widget wCardVestanesia({required String imageAsset}) {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        'Per 12 Bulan',
+                        'Per ' + periode + ' Bulan',
                         style: TextStyle(color: Colors.black),
                       ),
                       Container(
@@ -333,7 +350,7 @@ Widget wCardVestanesia({required String imageAsset}) {
                         padding:
                             EdgeInsets.symmetric(vertical: 2, horizontal: 4),
                         child: Text(
-                          '27%',
+                          presentase + ' %',
                           style: TextStyle(color: Colors.white),
                         ),
                       )
@@ -362,11 +379,11 @@ Widget wCardVestanesia({required String imageAsset}) {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        'Rp 800 Juta',
+                        'Rp ' + investasi + ' Juta',
                         style: TextStyle(color: Colors.orange),
                       ),
                       Text(
-                        'Rp 1 Miliyar',
+                        'Rp ' + dana,
                         style: TextStyle(color: Colors.black),
                       ),
                     ],
@@ -374,15 +391,70 @@ Widget wCardVestanesia({required String imageAsset}) {
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 8),
-                  child: new LinearPercentIndicator(
-                    lineHeight: 20.0,
-                    percent: 0.9,
-                    progressColor: Colors.blue[400],
-                    backgroundColor: Colors.grey[300],
+                  child: Visibility(
+                    visible: visibleProgress,
+                    child: new LinearPercentIndicator(
+                      lineHeight: 8.0,
+                      percent: percentProgress,
+                      progressColor: Colors.orange,
+                      backgroundColor: Colors.grey[300],
+                    ),
                   ),
-                )
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Visibility(
+                        visible: ketSatu,
+                        child: Text(
+                          'Sisa ' + sisaHari + ' Hari Lagi',
+                          style: TextStyle(
+                              color: Color(0xFFF25656),
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                      Visibility(
+                        visible: ketDua,
+                        child: Text(
+                          'Dibuka Dalam ' + diBuka + ' Hari',
+                          style: TextStyle(
+                              color: Color(0xFF168039),
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                      Visibility(
+                        visible: ketTiga,
+                        child: Text(
+                          sisaUnit + ' Unit Tersisa',
+                          style: TextStyle(
+                              color: Color(0xFF000000),
+                              fontWeight: FontWeight.w400),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ],
             ),
+          ),
+          Container(
+            width: double.infinity,
+            height: 46,
+            margin: EdgeInsets.only(top: 16),
+            child: ElevatedButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(8),
+                              bottomRight: Radius.circular(8)))),
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(colorButton),
+                ),
+                child: Text(textButton),
+                onPressed: () {}),
           )
         ],
       ));
