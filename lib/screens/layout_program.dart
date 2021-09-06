@@ -2,6 +2,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vestanesia_widgets/screens/layout_program_semua.dart';
 import 'package:vestanesia_widgets/widgets/widgets_auth.dart';
 
 class ProgramLayout extends StatelessWidget {
@@ -77,7 +78,7 @@ class ProgramLayout extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.amber
                   ),
-                  child: Text('1'),
+                  child: ProgramSemua(),
                 ),
                 Container(
                   decoration: BoxDecoration(

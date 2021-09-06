@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
 ///navigator push
 Future wPushTo(BuildContext context, Widget widget) {
@@ -69,7 +70,10 @@ Widget wInputText({required String hintText, required dynamic contVar}) {
   );
 }
 
-Widget wTextReguler({required String text, required dynamic alignment, required dynamic margin}) {
+Widget wTextReguler(
+    {required String text,
+    required dynamic alignment,
+    required dynamic margin}) {
   return Container(
     margin: margin,
     child: Align(
@@ -143,13 +147,10 @@ Widget wHelperDoubleInput(
   );
 }
 
-
-
-Widget wInputAndDrop({
-  required String hintText1,
-  required dynamic contVar1,
-  required dynamic child
-}) {
+Widget wInputAndDrop(
+    {required String hintText1,
+    required dynamic contVar1,
+    required dynamic child}) {
   return Container(
     child: Row(
       children: <Widget>[
@@ -169,9 +170,7 @@ Widget wInputAndDrop({
         SizedBox(
           width: 20,
         ),
-        Expanded(
-          child: child
-        )
+        Expanded(child: child)
       ],
     ),
   );
@@ -219,7 +218,7 @@ Widget wDoubleInput(
   );
 }
 
-Widget wUploadButton({required String text}){
+Widget wUploadButton({required String text}) {
   return Container(
     color: Color(0xFFF5F6F8),
     margin: EdgeInsets.only(top: 4),
@@ -227,34 +226,164 @@ Widget wUploadButton({required String text}){
     child: DottedBorder(
       padding: EdgeInsets.symmetric(vertical: 19),
       color: Colors.grey,
-      child:  Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Container(
-            child: Icon(Icons.camera_alt,color: Colors.grey,),
+            child: Icon(
+              Icons.camera_alt,
+              color: Colors.grey,
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 12),
-            child: Text(text, 
-              style: TextStyle(fontSize: 14, color: Colors.grey, fontWeight: FontWeight.w600),),
+            child: Text(
+              text,
+              style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w600),
+            ),
           )
         ],
       ),
-      
-      ),
+    ),
   );
 }
 
+Widget wDividerGaris({required dynamic margin}) {
+  return Container(
+    margin: margin,
+    child: Row(
+      children: <Widget>[Expanded(child: Divider())],
+    ),
+  );
+}
 
-  Widget wDividerGaris({required dynamic margin}){
-    return Container(
-      margin: margin,
-      child: Row(
+Widget wCardVestanesia({required String imageAsset}) {
+  return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      color: Colors.white,
+      child: Column(
         children: <Widget>[
-          Expanded(child: Divider())
+          Stack(
+            children: <Widget>[
+              Container(
+                height: 140,
+                margin: EdgeInsets.only(left: 16),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(8),
+                        topRight: Radius.circular(8)),
+                    image: DecorationImage(
+                        fit: BoxFit.fill, image: AssetImage(imageAsset))),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 2, horizontal: 11),
+                child: Text(
+                  'Bagi Hasil 12 Bulan',
+                  style: TextStyle(fontSize: 12, color: Colors.white),
+                ),
+                margin: EdgeInsets.only(left: 16),
+                decoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius:
+                      BorderRadius.only(bottomLeft: Radius.circular(8)),
+                ),
+              )
+            ],
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(16, 12, 16, 16),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  'Pengembangan Komoditi Pisang Cavendish (Musa acuminate/Cavendish)',
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Periode Imbal',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Text(
+                        'Presentase Imbal',
+                        style: TextStyle(color: Colors.grey),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Per 12 Bulan',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Color(0xFF168039),
+                            borderRadius: BorderRadius.circular(4)),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 2, horizontal: 4),
+                        child: Text(
+                          '27%',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Total Investasi',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Text(
+                        'target Dana',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Rp 800 Juta',
+                        style: TextStyle(color: Colors.orange),
+                      ),
+                      Text(
+                        'Rp 1 Miliyar',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 8),
+                  child: new LinearPercentIndicator(
+                    lineHeight: 20.0,
+                    percent: 0.9,
+                    progressColor: Colors.blue[400],
+                    backgroundColor: Colors.grey[300],
+                  ),
+                )
+              ],
+            ),
+          )
         ],
-      ),
-    );
-  }
-
-
+      ));
+}

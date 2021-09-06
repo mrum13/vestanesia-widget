@@ -32,6 +32,7 @@ dependencies:
   flutter_svg: ^0.22.0
   dotted_border: ^2.0.0+1
   roundcheckbox: ^2.0.2
+  percent_indicator: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +62,7 @@ flutter:
     - images/notificationInactive.svg
     - images/moreActive.svg
     - images/moreInactive.svg
+    - images/pisang1.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
