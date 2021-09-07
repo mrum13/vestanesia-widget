@@ -459,3 +459,343 @@ Widget wCardVestanesia(
         ],
       ));
 }
+
+Widget wCardInvestasiku({
+  required String bagiHasil,
+  required String judulCard,
+  required String periode,
+  required String presentase,
+  required String investasi,
+  required String dana,
+  required String sisaHari,
+  required String sisaUnit,
+  required String diBuka,
+  required bool ketSatu,
+  required bool ketDua,
+  required bool ketTiga,
+  required dynamic colorButton,
+  required String textButton,
+  required double percentProgress,
+  required bool visibleProgress,
+}) {
+  return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      color: Colors.white,
+      child: Column(
+        children: <Widget>[
+          Stack(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(left: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(8),
+                      topRight: Radius.circular(8)),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 2, horizontal: 11),
+                child: Text(
+                  'Bagi Hasil ' + bagiHasil + ' Bulan',
+                  style: TextStyle(fontSize: 12, color: Colors.white),
+                ),
+                margin: EdgeInsets.only(left: 16),
+                decoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius:
+                      BorderRadius.only(bottomLeft: Radius.circular(8)),
+                ),
+              )
+            ],
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(16, 12, 16, 0),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  judulCard,
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Periode Imbal',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Text(
+                        'Presentase Imbal',
+                        style: TextStyle(color: Colors.grey),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Per ' + periode + ' Bulan',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Color(0xFF168039),
+                            borderRadius: BorderRadius.circular(4)),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 2, horizontal: 4),
+                        child: Text(
+                          presentase + ' %',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Total Investasi',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Text(
+                        'target Dana',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Rp ' + investasi + ' Juta',
+                        style: TextStyle(color: Colors.orange),
+                      ),
+                      Text(
+                        'Rp ' + dana,
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 8),
+                  child: Visibility(
+                    visible: visibleProgress,
+                    child: new LinearPercentIndicator(
+                      lineHeight: 8.0,
+                      percent: percentProgress,
+                      progressColor: Colors.orange,
+                      backgroundColor: Colors.grey[300],
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Visibility(
+                        visible: ketSatu,
+                        child: Text(
+                          'Sisa ' + sisaHari + ' Hari Lagi',
+                          style: TextStyle(
+                              color: Color(0xFFF25656),
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                      Visibility(
+                        visible: ketDua,
+                        child: Text(
+                          'Dibuka Dalam ' + diBuka + ' Hari',
+                          style: TextStyle(
+                              color: Color(0xFF168039),
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                      Visibility(
+                        visible: ketTiga,
+                        child: Text(
+                          sisaUnit + ' Unit Tersisa',
+                          style: TextStyle(
+                              color: Color(0xFF000000),
+                              fontWeight: FontWeight.w400),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            height: 46,
+            margin: EdgeInsets.only(top: 16),
+            child: ElevatedButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(8),
+                              bottomRight: Radius.circular(8)))),
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(colorButton),
+                ),
+                child: Text(textButton),
+                onPressed: () {}),
+          )
+        ],
+      ));
+}
+
+Widget wCardInvestasiku2({
+  required String bagiHasil,
+  required String judulCard,
+  required String investasi,
+  required String imbal,
+  required String tahapInvest,
+  required String ketProgramInvest,
+  required dynamic colorKetProgramInvest,
+  required dynamic colorButton,
+  required String textButton,
+}) {
+  return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      color: Colors.white,
+      child: Column(
+        children: <Widget>[
+          Stack(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(left: 16),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(8),
+                      topRight: Radius.circular(8)),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 2, horizontal: 11),
+                child: Text(
+                  'Bagi Hasil ' + bagiHasil + ' Bulan',
+                  style: TextStyle(fontSize: 12, color: Colors.white),
+                ),
+                margin: EdgeInsets.only(left: 16),
+                decoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius:
+                      BorderRadius.only(bottomLeft: Radius.circular(8)),
+                ),
+              )
+            ],
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(16, 12, 16, 0),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  judulCard,
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Investasi',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Text(
+                        'Total Imbal',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Rp ' + investasi,
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      Text(
+                        'Rp ' + imbal,
+                        style: TextStyle(color: Color(0xFF168039)),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 22),
+                  child: Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          (Text(
+                            'Tahapan Investasi',
+                            style: TextStyle(color: Colors.grey),
+                          )),
+                          Container(
+                            margin: EdgeInsets.only(top: 10),
+                            child: Text(
+                              tahapInvest,
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 26),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                     Text(
+                          ketProgramInvest,
+                          style: TextStyle(
+                              color: colorKetProgramInvest,
+                              fontWeight: FontWeight.w400),
+                        ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            height: 46,
+            margin: EdgeInsets.only(top: 16),
+            child: ElevatedButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(8),
+                              bottomRight: Radius.circular(8)))),
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(colorButton),
+                ),
+                child: Text(textButton),
+                onPressed: () {}),
+          )
+        ],
+      ));
+}
