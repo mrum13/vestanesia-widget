@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vestanesia_widgets/screens/layout_detail_investasi.dart';
 import 'package:vestanesia_widgets/widgets/widgets.dart';
 
 class InvestasikuSelesai extends StatefulWidget {
@@ -20,7 +21,8 @@ Widget _cardInvestasiHalf(){
       ketProgramInvest: 'Pengembalian dana investasi + imbal', 
       colorKetProgramInvest: Color(0xFF168039), 
       colorButton: Color(0xFF168039), 
-      textButton: 'Lihat Laporan Investasi');
+      textButton: 'Lihat Laporan Investasi', 
+      onPressed: () => wPushTo(context, DetailInvestasi()), context: context);
   }
 
   @override

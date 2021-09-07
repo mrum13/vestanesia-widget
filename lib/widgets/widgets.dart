@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 ///navigator push
@@ -659,6 +660,7 @@ Widget wCardInvestasiku({
 }
 
 Widget wCardInvestasiku2({
+  required BuildContext context,
   required String bagiHasil,
   required String judulCard,
   required String investasi,
@@ -668,6 +670,7 @@ Widget wCardInvestasiku2({
   required dynamic colorKetProgramInvest,
   required dynamic colorButton,
   required String textButton,
+  required Function() onPressed 
 }) {
   return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -794,8 +797,34 @@ Widget wCardInvestasiku2({
                       MaterialStateProperty.all<Color>(colorButton),
                 ),
                 child: Text(textButton),
-                onPressed: () {}),
+                onPressed: onPressed),
           )
         ],
       ));
+}
+
+Widget wCostumAppBarBack({required String title}){
+  return Container(
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(color: Colors.white, boxShadow: [
+        BoxShadow(
+          color: Colors.grey,
+          blurRadius: 1.0,
+        )
+      ]),
+      child: Stack(
+        children: <Widget>[
+          SvgPicture.asset("images/Back.svg"),
+          Center(
+            child: Text(
+              title,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+            ),
+          )
+        ],
+      ),
+    );
+}
+
+class Required {
 }

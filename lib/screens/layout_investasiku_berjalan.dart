@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:vestanesia_widgets/screens/layout_detail_investasi.dart';
 import 'package:vestanesia_widgets/widgets/widgets.dart';
 
-class InvestasikuBerjalan extends StatelessWidget {
+class InvestasikuBerjalan extends StatefulWidget {
   const InvestasikuBerjalan({ Key? key }) : super(key: key);
 
-  Widget _cardInvestasiSoon(){
+  @override
+  _InvestasikuBerjalanState createState() => _InvestasikuBerjalanState();
+}
+
+class _InvestasikuBerjalanState extends State<InvestasikuBerjalan> {
+
+Widget _cardInvestasiSoon(){
     return wCardInvestasiku(
       bagiHasil: '12', 
       judulCard: 'Pengembangan Komoditi Pisang Cavendish (Musa acuminate/Cavendish)', 
@@ -34,7 +41,10 @@ class InvestasikuBerjalan extends StatelessWidget {
       ketProgramInvest: 'Program akan berakhir dalam 365 hari', 
       colorKetProgramInvest: Color(0xFFF2994A), 
       colorButton: Color(0xFF168039), 
-      textButton: 'Lihat Progress');
+      textButton: 'Lihat Progress', 
+      context: context,
+      onPressed: () => wPushTo(context, DetailInvestasi()), 
+    );
   }
 
   @override
@@ -45,7 +55,8 @@ class InvestasikuBerjalan extends StatelessWidget {
           children: <Widget>[
             _cardInvestasiHalf(),
             SizedBox(height: 20,),
-            _cardInvestasiSoon()
+            _cardInvestasiSoon(),
+            SizedBox(height: 20,),
           ],
         )
       ],
