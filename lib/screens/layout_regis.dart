@@ -84,11 +84,10 @@ class _RegisterState extends State<Register> {
 
   Widget _buttonRegis(){
     return wButtonSubmitGreen(
-      context: context,
       title: 'Daftar Akun', 
       onPressed: (){
         
-      }
+      }, marginTop: EdgeInsets.only(top: 20)
     );
   }
 

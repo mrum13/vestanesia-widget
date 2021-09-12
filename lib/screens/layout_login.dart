@@ -93,9 +93,8 @@ class LoginLayoutState extends State<LoginLayout> {
 
   Widget _buttonLogin(){
     return wButtonSubmitGreen(
-      context: context,
       title: 'Masuk Akun', 
-      onPressed: () => wPushTo(context, LengkapiData1())
+      onPressed: () => wPushTo(context, LengkapiData1()), marginTop: EdgeInsets.only(top: 20)
     );
   }
 

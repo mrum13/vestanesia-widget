@@ -12,7 +12,7 @@ class InvestasikuBerjalan extends StatefulWidget {
 class _InvestasikuBerjalanState extends State<InvestasikuBerjalan> {
 
 Widget _cardInvestasiSoon(){
-    return wCardInvestasiku(
+    return wCardInvestasikuAkanDatang(
       bagiHasil: '12', 
       judulCard: 'Pengembangan Komoditi Pisang Cavendish (Musa acuminate/Cavendish)', 
       periode: '12', 
@@ -32,7 +32,7 @@ Widget _cardInvestasiSoon(){
   }
 
   Widget _cardInvestasiHalf(){
-    return wCardInvestasiku2(
+    return wCardInvestasikuSedangBerjalan(
       bagiHasil: '12', 
       judulCard: 'Pengembangan Komoditi Pisang Cavendish (Musa acuminate/Cavendish)',
       investasi: '10.000.000', 

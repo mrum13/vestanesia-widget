@@ -64,6 +64,7 @@ flutter:
     - images/moreActive.svg
     - images/moreInactive.svg
     - images/pisang1.png
+    - images/pisang2.png
     - images/default_dp.svg
     - images/Wallet.svg
     - images/arrowRight.svg
@@ -71,6 +72,11 @@ flutter:
     - images/maps.svg
     - images/bibit1.png
     - images/bibit2.png
+    - images/Share.svg
+    - images/dompet.svg
+    - images/dialogacc.svg
+    - images/plus.svg
+    - images/min.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

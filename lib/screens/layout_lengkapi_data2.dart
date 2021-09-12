@@ -116,9 +116,8 @@ class _LengkapiData2State extends State<LengkapiData2> {
 
   Widget _buttonSelesai(){
     return wButtonSubmitGreen(
-      context: context, 
       title: 'Selesai', 
-      onPressed: () => wPushReplaceTo(context, Dashboard()));
+      onPressed: () => wPushReplaceTo(context, Dashboard()), marginTop: EdgeInsets.only(top: 20));
   }
 
   @override

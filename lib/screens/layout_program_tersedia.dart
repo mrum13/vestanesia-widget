@@ -1,63 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:vestanesia_widgets/data/data_program.dart';
+import 'package:vestanesia_widgets/models/model_program.dart';
+import 'package:vestanesia_widgets/screens/layout_detail_program.dart';
 import 'package:vestanesia_widgets/widgets/widgets.dart';
 
-class ProgramTersedia extends StatelessWidget {
+class ProgramTersedia extends StatefulWidget {
   const ProgramTersedia({ Key? key }) : super(key: key);
 
-  Widget _cardMulai1(){
-    return wCardVestanesia(
-      imageAsset: "images/pisang1.png", 
-      bagiHasil: '12',
-      judulCard: 'Pengembangan Komoditi Pisang Cavendish (Musa acuminate/Cavendish)',
-      periode: '12',
-      presentase: '27',
-      investasi: '800',
-      dana: '1 Milyar',
-      sisaHari: '2',
-      sisaUnit: '200',
-      colorButton: Color(0xFF168039),
-      diBuka: '2',
-      ketSatu: true,
-      ketDua: false,
-      ketTiga: true,
-      textButton: 'Mulai Investasi', 
-      percentProgress: 0.9,
-      visibleProgress: true);
-  }
+  @override
+  _ProgramTersediaState createState() => _ProgramTersediaState();
+}
 
-  Widget _cardMulai2(){
-    return wCardVestanesia(
-      imageAsset: "images/pisang1.png", 
-      bagiHasil: '12',
-      judulCard: 'Pengembangan Komoditi Pisang Cavendish (Musa acuminate/Cavendish)',
-      periode: '12',
-      presentase: '27',
-      investasi: '500',
-      dana: '1 Milyar',
-      sisaHari: '5',
-      sisaUnit: '100',
-      colorButton: Color(0xFF168039),
-      diBuka: '1',
-      ketSatu: true,
-      ketDua: false,
-      ketTiga: true,
-      textButton: 'Mulai Investasi', 
-      percentProgress: 0.5,
-      visibleProgress: true);
-  }
-
+class _ProgramTersediaState extends State<ProgramTersedia> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        Column(
-          children: <Widget>[
-            _cardMulai1(),
-            SizedBox(height: 10,),
-            _cardMulai2()
-          ],      
-        )
-      ],
+    return Container(
+      child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              itemCount: DataProgram().cardData.length,
+              itemBuilder: (BuildContext context, int index) {
+                ModelProgram modelCard = DataProgram().cardData[index];
+                if (modelCard.textButton == "Mulai Investasi") {
+                  return wCardProgram(
+                      imageAsset: modelCard.images[0],
+                      bagiHasil: modelCard.bagiHasil,
+                      judulCard: modelCard.judul,
+                      periode: modelCard.periode,
+                      presentase: modelCard.presentase.toString(),
+                      investasi: modelCard.investasi,
+                      dana: modelCard.dana,
+                      sisaHari: modelCard.sisaHari,
+                      sisaUnit: modelCard.sisaUnit,
+                      colorButton: Color(0xFF168039),
+                      diBuka: modelCard.dibuka,
+                      ketSatu: true,
+                      ketDua: false,
+                      ketTiga: true,
+                      textButton: modelCard.textButton,
+                      percentProgress: modelCard.percentProgress,
+                      visibleProgress: true,
+                      onPressed: () => wPushTo(context, DetailProgram()), 
+                      txtKanan: 'Target Dana', 
+                      txtKiri: 'Total Investasi', 
+                      colorValTxtKiri: Colors.orange);
+                } else {
+                  return SizedBox();
+                }
+              }),
     );
   }
 }

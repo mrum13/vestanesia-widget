@@ -46,9 +46,8 @@ class _ForgotPassState extends State<ForgotPass> {
 
   Widget _buttonForgotKirim(){
     return wButtonSubmitGreen(
-      context: context,
       title: 'Kirim', 
-      onPressed: () => wPushReplaceTo(context, LoginLayout())
+      onPressed: () => wPushReplaceTo(context, LoginLayout()), marginTop: EdgeInsets.only(top: 20)
     );
   }
 

@@ -393,9 +393,8 @@ class _LengkapiData1State extends State<LengkapiData1> {
 
   Widget _buttonSelanjutnya(){
     return wButtonSubmitGreen(
-      context: context, 
       title: 'Selanjutnya', 
-      onPressed: () => wPushTo(context, LengkapiData2())
+      onPressed: () => wPushTo(context, LengkapiData2()), marginTop: EdgeInsets.only(top: 20)
     );
   }
 

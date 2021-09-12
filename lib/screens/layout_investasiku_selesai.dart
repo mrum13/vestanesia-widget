@@ -11,8 +11,8 @@ class InvestasikuSelesai extends StatefulWidget {
 
 class _InvestasikuSelesaiState extends State<InvestasikuSelesai> {
 
-Widget _cardInvestasiHalf(){
-    return wCardInvestasiku2(
+Widget _cardInvestasiSelesai(){
+    return wCardInvestasikuSedangBerjalan(
       bagiHasil: '12', 
       judulCard: 'Pengembangan Komoditi Pisang Cavendish (Musa acuminate/Cavendish)',
       investasi: '10.000.000', 
@@ -31,9 +31,9 @@ Widget _cardInvestasiHalf(){
       children: <Widget>[
         Column(
           children: <Widget>[
-            _cardInvestasiHalf(),
+            _cardInvestasiSelesai(),
             SizedBox(height: 20,),
-            _cardInvestasiHalf(),
+            _cardInvestasiSelesai(),
             SizedBox(height: 20,),
           ],
         )

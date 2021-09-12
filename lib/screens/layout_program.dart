@@ -12,7 +12,15 @@ class ProgramLayout extends StatelessWidget {
   Widget _costumAppbar() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-      color: Colors.white,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            blurRadius: 1.0,
+          )
+        ]
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -72,7 +80,7 @@ class ProgramLayout extends StatelessWidget {
             ///tabview
             Container( 
               color: Color(0xFFE5E5E5),
-              margin: EdgeInsets.all(16),
+              margin: EdgeInsets.only(bottom:16, top: 16),
               padding: EdgeInsets.only(bottom: 210),
               height: MediaQuery.of(context).size.height,
               child: TabBarView(

@@ -21,13 +21,14 @@ Future wPushReplaceTo(BuildContext context, Widget widget) {
 
 ///button hijau
 Widget wButtonSubmitGreen(
-    {required BuildContext context,
+    {
     required String title,
-    required Function() onPressed}) {
+    required Function() onPressed,
+    required dynamic marginTop}) {
   return Container(
       width: double.infinity,
       height: 46,
-      margin: EdgeInsets.only(top: 20),
+      margin: marginTop,
       child: ElevatedButton(
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -261,14 +262,17 @@ Widget wDividerGaris({required dynamic margin}) {
   );
 }
 
-Widget wCardVestanesia(
+Widget wCardProgram(
     {required String imageAsset,
     required String bagiHasil,
     required String judulCard,
     required String periode,
     required String presentase,
+    required String txtKiri,
+    required String txtKanan,
     required String investasi,
     required String dana,
+    required dynamic colorValTxtKiri,
     required String sisaHari,
     required String sisaUnit,
     required String diBuka,
@@ -278,8 +282,10 @@ Widget wCardVestanesia(
     required dynamic colorButton,
     required String textButton,
     required double percentProgress,
-    required bool visibleProgress}) {
+    required bool visibleProgress,
+    required Function() onPressed}) {
   return Card(
+      margin: EdgeInsets.only(bottom: 16, left: 16, right: 16),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       color: Colors.white,
       child: Column(
@@ -364,11 +370,11 @@ Widget wCardVestanesia(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        'Total Investasi',
+                        txtKiri,
                         style: TextStyle(color: Colors.grey),
                       ),
                       Text(
-                        'target Dana',
+                        txtKanan,
                         style: TextStyle(color: Colors.grey),
                       ),
                     ],
@@ -380,8 +386,8 @@ Widget wCardVestanesia(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        'Rp ' + investasi + ' Juta',
-                        style: TextStyle(color: Colors.orange),
+                        'Rp ' + investasi,
+                        style: TextStyle(color: colorValTxtKiri),
                       ),
                       Text(
                         'Rp ' + dana,
@@ -455,13 +461,13 @@ Widget wCardVestanesia(
                       MaterialStateProperty.all<Color>(colorButton),
                 ),
                 child: Text(textButton),
-                onPressed: () {}),
+                onPressed: onPressed),
           )
         ],
       ));
 }
 
-Widget wCardInvestasiku({
+Widget wCardInvestasikuAkanDatang({
   required String bagiHasil,
   required String judulCard,
   required String periode,
@@ -659,19 +665,18 @@ Widget wCardInvestasiku({
       ));
 }
 
-Widget wCardInvestasiku2({
-  required BuildContext context,
-  required String bagiHasil,
-  required String judulCard,
-  required String investasi,
-  required String imbal,
-  required String tahapInvest,
-  required String ketProgramInvest,
-  required dynamic colorKetProgramInvest,
-  required dynamic colorButton,
-  required String textButton,
-  required Function() onPressed 
-}) {
+Widget wCardInvestasikuSedangBerjalan(
+    {required BuildContext context,
+    required String bagiHasil,
+    required String judulCard,
+    required String investasi,
+    required String imbal,
+    required String tahapInvest,
+    required String ketProgramInvest,
+    required dynamic colorKetProgramInvest,
+    required dynamic colorButton,
+    required String textButton,
+    required Function() onPressed}) {
   return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       color: Colors.white,
@@ -770,12 +775,12 @@ Widget wCardInvestasiku2({
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                     Text(
-                          ketProgramInvest,
-                          style: TextStyle(
-                              color: colorKetProgramInvest,
-                              fontWeight: FontWeight.w400),
-                        ),
+                      Text(
+                        ketProgramInvest,
+                        style: TextStyle(
+                            color: colorKetProgramInvest,
+                            fontWeight: FontWeight.w400),
+                      ),
                     ],
                   ),
                 ),
@@ -803,28 +808,55 @@ Widget wCardInvestasiku2({
       ));
 }
 
-Widget wCostumAppBarBack({required String title}){
+Widget wCostumAppBarBack({required String title}) {
   return Container(
-      padding: EdgeInsets.all(16),
-      decoration: BoxDecoration(color: Colors.white, boxShadow: [
-        BoxShadow(
-          color: Colors.grey,
-          blurRadius: 1.0,
+    padding: EdgeInsets.all(16),
+    decoration: BoxDecoration(color: Colors.white, boxShadow: [
+      BoxShadow(
+        color: Colors.grey,
+        blurRadius: 1.0,
+      )
+    ]),
+    child: Stack(
+      children: <Widget>[
+        SvgPicture.asset("images/Back.svg"),
+        Center(
+          child: Text(
+            title,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+          ),
         )
-      ]),
-      child: Stack(
-        children: <Widget>[
-          SvgPicture.asset("images/Back.svg"),
-          Center(
-            child: Text(
-              title,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
-            ),
-          )
-        ],
-      ),
-    );
+      ],
+    ),
+  );
 }
 
-class Required {
+Widget wImagesDetail({required String imageAsset, required String bagiHasil}) {
+  return Stack(
+    children: <Widget>[
+      Container(
+        height: 160,
+        margin: EdgeInsets.only(left: 16),
+        decoration: BoxDecoration(
+          color: Colors.green,
+            borderRadius: BorderRadius.circular(8),
+            image: DecorationImage(
+                fit: BoxFit.fill, image: AssetImage(imageAsset))),
+      ),
+      Container(
+        padding: EdgeInsets.symmetric(vertical: 2, horizontal: 11),
+        child: Text(
+          'Bagi Hasil ' + bagiHasil + ' Bulan',
+          style: TextStyle(fontSize: 12, color: Colors.white),
+        ),
+        margin: EdgeInsets.only(left: 16),
+        decoration: BoxDecoration(
+          color: Colors.orange,
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8)),
+        ),
+      )
+    ],
+  );
 }
+
+class Required {}
