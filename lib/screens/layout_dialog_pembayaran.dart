@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vestanesia_widgets/data/data_program.dart';
 import 'package:vestanesia_widgets/models/model_program.dart';
+import 'package:vestanesia_widgets/screens/layout_detail_pembayaran1.dart';
 import 'package:vestanesia_widgets/widgets/widgets.dart';
 
 class DialogPembayaran extends StatelessWidget {
@@ -43,7 +44,7 @@ class DialogPembayaran extends StatelessWidget {
     );
   }
 
-  Widget _contentDialog() {
+  Widget _contentDialog({required Function() onPressed}) {
     return Container(
       margin: EdgeInsets.all(16),
       child: Column(
@@ -253,9 +254,39 @@ class DialogPembayaran extends StatelessWidget {
                     ],
                   ),
                 ),
-                
               ],
             ),
+          ),
+          Row(
+            children: [
+              Container(
+                height: 44,
+                margin: EdgeInsets.symmetric(vertical: 16),
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Color(0xFF168039))),
+                child: Icon(
+                  Icons.arrow_back,
+                  color: Color(0xFF168039),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  height: 44,
+                  margin: EdgeInsets.only(
+                    left: 20,
+                  ),
+                  child: ElevatedButton(
+                    onPressed: onPressed,
+                    child: Text('Proses Pembayaran'),
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Color(0xFF168039))),
+                  ),
+                ),
+              ),
+            ],
           )
         ],
       ),
@@ -270,10 +301,9 @@ class DialogPembayaran extends StatelessWidget {
     return Dialog(
       insetPadding: EdgeInsets.only(left: 16, right: 16),
       child: Container(
-        height: 490,
-        width: double.infinity,
+        height: 548,
         child: Column(
-          children: <Widget>[_appBarDialog(), _contentDialog()],
+          children: <Widget>[_appBarDialog(), _contentDialog(onPressed: () => wPushReplaceTo(context, DetailPembayaran1()))],
         ),
       ),
     );

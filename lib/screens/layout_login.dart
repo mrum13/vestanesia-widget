@@ -77,7 +77,7 @@ class LoginLayoutState extends State<LoginLayout> {
                 setState(() {
                   _obscureText = !_obscureText;
                 });
-              },
+              },  
             ),
           ),
         )
