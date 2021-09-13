@@ -1,8 +1,11 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:vestanesia_widgets/screens/layout_dashboard.dart';
 import 'package:vestanesia_widgets/screens/layout_detail_investasi.dart';
 import 'package:vestanesia_widgets/screens/layout_detail_pembayaran1.dart';
+import 'package:vestanesia_widgets/screens/layout_detail_pembayaran2.dart';
 import 'package:vestanesia_widgets/screens/layout_detail_program.dart';
 import 'package:vestanesia_widgets/screens/layout_lengkapi_data2.dart';
 import 'package:vestanesia_widgets/screens/layout_login.dart';
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Inter'),
       debugShowCheckedModeBanner: false,
-      home: DetailProgram()
+      home: LoginLayout()
     );
   }
 }        

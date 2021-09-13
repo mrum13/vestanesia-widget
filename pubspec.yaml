@@ -77,6 +77,11 @@ flutter:
     - images/dialogacc.svg
     - images/plus.svg
     - images/min.svg
+    - images/bca.png
+    - images/bni.png
+    - images/bri.png
+    - images/mandiri.png
+    - images/mandirisyariah.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

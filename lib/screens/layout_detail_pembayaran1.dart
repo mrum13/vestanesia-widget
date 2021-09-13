@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vestanesia_widgets/data/data_program.dart';
 import 'package:vestanesia_widgets/models/model_program.dart';
+import 'package:vestanesia_widgets/screens/layout_detail_pembayaran2.dart';
+import 'package:vestanesia_widgets/widgets/widgets.dart';
 
 class DetailPembayaran1 extends StatefulWidget {
   const DetailPembayaran1({Key? key}) : super(key: key);
@@ -416,7 +418,7 @@ class _DetailPembayaran1State extends State<DetailPembayaran1> {
                         left: 20,
                       ),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => wPushTo(context, DetailPembayaran2()),
                         child: Text('Bayar Sekarang'),
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(

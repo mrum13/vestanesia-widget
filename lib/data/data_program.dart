@@ -1,7 +1,16 @@
 import 'package:vestanesia_widgets/models/model_gambar_program.dart';
 import 'package:vestanesia_widgets/models/model_program.dart';
+import 'package:vestanesia_widgets/models/model_transfer_bank.dart';
 
 class DataProgram{
+
+  List<ModelBank> bankData = [
+    ModelBank("images/mandiri.png", '9087569204798'),
+    ModelBank("images/bri.png", '9087569204798'),
+    ModelBank("images/bca.png", '9087569204798'),
+    ModelBank("images/mandirisyariah.png", '9087569204798'),
+    ModelBank("images/bni.png", '9087569204798'),
+  ];
 
   List<ModelGambarProgram> gambarData = [
     ModelGambarProgram("images/pisang1.png"),
