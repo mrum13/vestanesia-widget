@@ -1,8 +1,21 @@
 import 'package:vestanesia_widgets/models/model_gambar_program.dart';
+import 'package:vestanesia_widgets/models/model_notifikasi.dart';
 import 'package:vestanesia_widgets/models/model_program.dart';
 import 'package:vestanesia_widgets/models/model_transfer_bank.dart';
 
 class DataProgram{
+
+  List<ModelNotifikasi> notifikasiData = [
+    ModelNotifikasi("Pembayaran", "Pembayaran Berhasil", "10 Sep"),
+    ModelNotifikasi("Program Baru", "Budidaya Pisang Cavendish", "10 Sep"),
+    ModelNotifikasi("Investasi", "Penanaman bibit oleh mitra Petani", "10 Sep"),
+    ModelNotifikasi("Pembayaran", "Pembayaran Berhasil", "10 Sep"),
+    ModelNotifikasi("Program Baru", "Budidaya Pisang Cavendish", "10 Sep"),
+    ModelNotifikasi("Investasi", "Penanaman bibit oleh mitra Petani", "10 Sep"),
+    ModelNotifikasi("Pembayaran", "Pembayaran Berhasil", "10 Sep"),
+    ModelNotifikasi("Program Baru", "Budidaya Pisang Cavendish", "10 Sep"),
+    ModelNotifikasi("Investasi", "Penanaman bibit oleh mitra Petani", "10 Sep"),
+  ];
 
   List<ModelBank> bankData = [
     ModelBank("images/mandiri.png", '9087569204798'),

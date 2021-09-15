@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:vestanesia_widgets/screens/layout_bantuan.dart';
 import 'package:vestanesia_widgets/screens/layout_investasiku.dart';
 import 'package:vestanesia_widgets/widgets/widgets.dart';
 
@@ -224,9 +225,9 @@ class _LainnyaLayoutState extends State<LainnyaLayout> {
       child: Column(
         children: <Widget>[
           _buttonSectionTiga(isiButton: 'Investasiku', intent: Investasiku(), context: context),
-          _buttonSectionTiga(isiButton: 'Bantuan', intent: Investasiku(),context: context),
-          _buttonSectionTiga(isiButton: 'FAQ', intent: Investasiku(),context: context),
-          _buttonSectionTiga(isiButton: 'Syarat & Ketentuan', intent: Investasiku(), context: context),
+          _buttonSectionTiga(isiButton: 'Bantuan', intent: BantuanLayout(),context: context),
+          _buttonSectionTiga(isiButton: 'Syarat & Ketentuan', intent: Investasiku(),context: context),
+          _buttonSectionTiga(isiButton: 'Kebijakan Privasi', intent: Investasiku(), context: context),
           _buttonSectionTiga(isiButton: 'Rating Playstore', intent: Investasiku(), context: context),
         ],
       )

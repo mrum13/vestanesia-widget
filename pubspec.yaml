@@ -82,6 +82,10 @@ flutter:
     - images/bri.png
     - images/mandiri.png
     - images/mandirisyariah.png
+    - images/investasi.svg
+    - images/pembayaran.svg
+    - images/programbaru.svg
+    - images/notifball.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
