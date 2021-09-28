@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vestanesia_widgets/screens/layout_login.dart';
 import 'package:vestanesia_widgets/widgets/widgets.dart';
-import 'package:vestanesia_widgets/widgets/widgets_auth.dart';
 
 class Register extends StatefulWidget {
   const Register({ Key? key }) : super(key: key);

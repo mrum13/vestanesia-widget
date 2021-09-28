@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vestanesia_widgets/data/data_program.dart';
 import 'package:vestanesia_widgets/models/model_notifikasi.dart';
-import 'package:vestanesia_widgets/widgets/widgets_auth.dart';
+import 'package:vestanesia_widgets/widgets/widgets.dart';
 
 class NotificationLayout extends StatefulWidget {
   const NotificationLayout({ Key? key }) : super(key: key);

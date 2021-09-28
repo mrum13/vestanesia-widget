@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vestanesia_widgets/screens/layout_program_selesai.dart';
 import 'package:vestanesia_widgets/screens/layout_program_semua.dart';
 import 'package:vestanesia_widgets/screens/layout_program_tersedia.dart';
-import 'package:vestanesia_widgets/widgets/widgets_auth.dart';
+import 'package:vestanesia_widgets/widgets/widgets.dart';
 
 class ProgramLayout extends StatelessWidget {
   const ProgramLayout({Key? key}) : super(key: key);

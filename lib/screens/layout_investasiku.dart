@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vestanesia_widgets/screens/layout_investasiku_berjalan.dart';
 import 'package:vestanesia_widgets/screens/layout_investasiku_selesai.dart';
 import 'package:vestanesia_widgets/widgets/widgets.dart';
-import 'package:vestanesia_widgets/widgets/widgets_auth.dart';
 
 class Investasiku extends StatefulWidget {
   const Investasiku({Key? key}) : super(key: key);

@@ -1,9 +1,31 @@
 import 'package:vestanesia_widgets/models/model_gambar_program.dart';
 import 'package:vestanesia_widgets/models/model_notifikasi.dart';
 import 'package:vestanesia_widgets/models/model_program.dart';
+import 'package:vestanesia_widgets/models/model_syarat.dart';
 import 'package:vestanesia_widgets/models/model_transfer_bank.dart';
 
 class DataProgram{
+
+  List<ModelSyarat> syaratData = [
+    ModelSyarat("Vestanesia adalah sebuah perusahaan finansial berbasis digital yang fokus pada usaha pertanian, peternakan, perikanan dan industri olahannya. Investor dapat bermitra dengan para petani terbaik melalui penyertaan modal investasi pada Program Budidaya/Transaksi Penjualan Vestanesia dengan manfaat bagi hasil yang menguntungkan."),
+    ModelSyarat("Investor harus membaca, menyetujui syarat dan ketentuan yang tercantum di Web Vestanesia melalui www.vestanesia.com."),
+    ModelSyarat("Sebelum berinvestasi, Investor harus membaca dan mengerti setiap informasi yang tertuang dalam Proposal Analisis Kelayakan Usaha pada setiap Program Budidaya/Transaksi Penjualan Vestanesia."),
+    ModelSyarat("Investor dan Vestanesia berdasarkan itikad baik serta saling mempercayai, telah saling sepakat dan setuju untuk saling mengikatkan diri dalam Kepesertaan Program Budidaya/Transaksi Penjualan Vestanesia."),
+    ModelSyarat("Investor wajib menyerahkan semua dokumen termasuk setiap perubahannya dari waktu ke waktu yang disyaratkan oleh Vestanesia berdasarkan aturan OJK RI."),
+    ModelSyarat("Vestanesia akan memberikan informasi penempatan dana kepada Investor berdasarkan Program Budidaya/Transaksi Penjualan Vestanesia yang telah dipilih oleh Investor."),
+    ModelSyarat("Dana yang diinvestasikan oleh Investor adalah kekayaan dan dana yang berasal dari sumber-sumber yang dibenarkan berdasarkan ketentuan hukum yang berlaku, yakni : Upah kerja, Pendapatan bisnis, Hasil dari penjualan properti dan/atau aset, Warisan, Hadiah, dan sumber lainnya (dijelaskan)."),
+    ModelSyarat("Dana yang diinvestasikan oleh Investor juga bukan dari kegiatan pencucian uang, perdagangan narkotik dan obat-obatan terlarang, dan hasil kejahatan lainnya."),
+    ModelSyarat("Investor akan mengkonfirmasi setiap penyertaan dana di Program Budidaya/Transaksi Penjualan Vestanesia yang diselenggarakan oleh Vestanesia secara online melalui www.vestanesia.com"),
+    ModelSyarat("Paling lambat 3 (tiga hari kerja) setelah Investor mengkonfirmasi penyertaan dana, Vestanesia akan menerbitkan sertifikat penyertaan investasi (selanjutnya disebut sebagai SERTIFIKAT PENYERTAAN INVESTASI)."),
+    ModelSyarat("Investor tidak dapat membatalkan penyertaan dana di setiap Program Budidaya/Transaksi Penjualan Vestanesia sebelum program budidaya tersebut berjalan."),
+    ModelSyarat("Dalam kondisi tertentu dengan alasan yang sifatnya mendesak, Investor dapat menarik dana investasi di Vestanesia sebelum masa akhir periode Program Budidaya/Transaksi Penjualan Vestanesia dengan ketentuan dikenakan denda administratif 35% dari total dana investasi."),
+    ModelSyarat("Bagi hasil untuk setiap Program Budidaya/Transaksi Penjualan Vestanesia diselenggarakan dengan pengembalian pokok pinjaman dan bagi hasil dengan besaran dan jadwal pengembalian sesuai dengan Proposal Analisis Kelayakan Usaha yang diterbitkan oleh Vestanesia di awal investasi. Mohon untuk membaca Proposal Analisis Kelayakan Usaha pada setiap Program Budidaya/Transaksi Penjualan Vestanesia untuk mengetahui informasi lebih terperinci."),
+    ModelSyarat("Segala kewajiban perpajakan yang timbul akibat pemberlakuan ketentuan investasi ini, akan ditanggung oleh Investor dan Vestanesia sesuai dengan peraturan perundang-undangan yang berlaku."),
+    ModelSyarat("Investor dan Vestanesia sepakat untuk menyelesaikan segala perselisihan yang timbul sehubungan dengan atau sebagai akibat dari penyertaan dana investasi ini secara musyawarah untuk mufakat."),
+    ModelSyarat("Apabila perselisihan tersebut tidak dapat diselesaikan dengan musyawarah mufakat, maka para pihak sepakat untuk mengajukan perselisihan yang ada kepada Badan Arbitrase Nasional Indonesia (BANI) dengan tunduk pada peraturan arbitrase BANI."),
+    ModelSyarat("Dalam keadaan darurat nasional, perang, peraturan larangan dari pemerintah atau penyebab lainnya diluar kendali Investor dan Vestanesia yang menghalangi untuk menjalankan Ketentuan berinvestasi ini maka kedua belah pihak akan dibebaskan dari kewajiban masing-masing selama periode tersebut."),
+    ModelSyarat("Hal-hal yang belum diatur dan perubahan-perubahan dari Ketentuan Investasi Vestanesia, akan diselesaikan melalui kesepakatan atau perundingan antara Investor dengan Vestanesia dan akan dituangkan dalam suatu Addendum Perjanjian yang ditandatangani oleh kedua belah pihak serta merupakan bagian yang tidak terpisahkan dari dan mempunyai kekuatan hukum yang sama dengan Ketentuan Investasi ini."),
+  ];
 
   List<ModelNotifikasi> notifikasiData = [
     ModelNotifikasi("Pembayaran", "Pembayaran Berhasil", "10 Sep"),

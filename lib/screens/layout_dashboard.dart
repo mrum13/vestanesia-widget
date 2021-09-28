@@ -8,7 +8,6 @@ import 'package:vestanesia_widgets/screens/layout_login.dart';
 import 'package:vestanesia_widgets/screens/layout_notification.dart';
 import 'package:vestanesia_widgets/screens/layout_program.dart';
 import 'package:vestanesia_widgets/widgets/widgets.dart';
-import 'package:vestanesia_widgets/widgets/widgets_auth.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);

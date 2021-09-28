@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vestanesia_widgets/screens/layout_bantuan.dart';
 import 'package:vestanesia_widgets/screens/layout_investasiku.dart';
+import 'package:vestanesia_widgets/screens/layout_syarat.dart';
 import 'package:vestanesia_widgets/widgets/widgets.dart';
 
 class LainnyaLayout extends StatefulWidget {
@@ -226,7 +227,7 @@ class _LainnyaLayoutState extends State<LainnyaLayout> {
         children: <Widget>[
           _buttonSectionTiga(isiButton: 'Investasiku', intent: Investasiku(), context: context),
           _buttonSectionTiga(isiButton: 'Bantuan', intent: BantuanLayout(),context: context),
-          _buttonSectionTiga(isiButton: 'Syarat & Ketentuan', intent: Investasiku(),context: context),
+          _buttonSectionTiga(isiButton: 'Syarat & Ketentuan', intent: SyaratLayout(),context: context),
           _buttonSectionTiga(isiButton: 'Kebijakan Privasi', intent: Investasiku(), context: context),
           _buttonSectionTiga(isiButton: 'Rating Playstore', intent: Investasiku(), context: context),
         ],

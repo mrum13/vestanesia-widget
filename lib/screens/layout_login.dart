@@ -3,7 +3,6 @@ import 'package:vestanesia_widgets/screens/layout_forgot_pass.dart';
 import 'package:vestanesia_widgets/screens/layout_lengkapi_data1.dart';
 import 'package:vestanesia_widgets/screens/layout_regis.dart';
 import 'package:vestanesia_widgets/widgets/widgets.dart';
-import 'package:vestanesia_widgets/widgets/widgets_auth.dart';
 
 
 class LoginLayout extends StatefulWidget {

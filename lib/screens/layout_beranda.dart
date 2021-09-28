@@ -4,7 +4,6 @@ import 'package:vestanesia_widgets/data/data_program.dart';
 import 'package:vestanesia_widgets/models/model_program.dart';
 import 'package:vestanesia_widgets/screens/layout_program_semua.dart';
 import 'package:vestanesia_widgets/widgets/widgets.dart';
-import 'package:vestanesia_widgets/widgets/widgets_auth.dart';
 
 import 'layout_detail_program.dart';
 
